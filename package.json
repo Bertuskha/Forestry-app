@@ -1,0 +1,25 @@
+{
+  "name": "gitdemo",
+  "version": "1.0.0",
+  "description": "A simple app to learn how to connect to a db from NodeJS and Express",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bertuskha/Forestry-app.git"
+  },
+  "author": "Albert Ruiz Vives",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bertuskha/Forestry-app/issues"
+  },
+  "homepage": "https://github.com/Bertuskha/Forestry-app#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mariadb": "^2.5.4"
+  }
+}
