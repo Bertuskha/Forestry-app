@@ -1,8 +1,10 @@
 import express from 'express';
 import ShortUniqueID from 'short-unique-id';
 import Data from '../model/data.model.js';
+import Image from '../model/image.model.js';
 
 const router = express.Router();
+router.use(express.json());
 
 router.get('/api/getToken', (req, res) => {
     const getID = new ShortUniqueID();
@@ -10,18 +12,17 @@ router.get('/api/getToken', (req, res) => {
     //Debugging purposes: console.log('id from backend ' + uid);
     res.send(uid);
 })
-/**
-router.get('/api/sendData', (req, res) => {
 
-})
-*/
-export {router};
-
-/**
- * const dataEntry = new Data({
-        userID: uid,
-        value: 7
+router.post('/api/sendData', (req, res) => {
+    const dataEntry = new Data({
+        userID: req.body.userID,
+        value: req.body.value
     });
+    res.json({
+        status: "successfully sent data",
+        userID: req.body.userID,
+        value: req.body.value
+    })
     dataEntry.save()
         .then((res) => {
             console.log(res);
@@ -29,4 +30,7 @@ export {router};
         .catch((err) =>{
             console.log(err);
         });
- */
+})
+
+export {router};
+
