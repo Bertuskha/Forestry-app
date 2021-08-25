@@ -8,6 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }  
     getToken();
 
+    async function getNumImages() {
+        const response = await fetch('http://localhost:3001/api/getNumImages');
+        const result = await response.text();
+        sessionStorage.setItem('imageCount', result);
+    }  
+    getNumImages();
+
     const btn = document.getElementById("Begin");
     btn.onclick = function(){
         window.location.href = "./formpage.html";

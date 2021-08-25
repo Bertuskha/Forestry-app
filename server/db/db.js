@@ -6,7 +6,7 @@ const sequelize = new Sequelize ('forestryData', 'root', 'M4tryo.shka', {
     host: 'localhost',
     dialect: 'mysql',
     define: {
-        timestamps: false,
+        updatedAt: false,
     },
 });
 
