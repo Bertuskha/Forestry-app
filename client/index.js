@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }  
     getNumImages();
 
+    sessionStorage.setItem('valid', true);
+
     const btn = document.getElementById("Begin");
     btn.onclick = function(){
         window.location.href = "./formpage.html";

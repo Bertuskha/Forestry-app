@@ -30,6 +30,7 @@ router.post('/api/getImages', async (req, res) => {
 router.post('/api/sendData', (req, res) => {
     const dataEntry = new Data({
         userID: req.body.userID,
+        questionID: req.body.questionID,
         value: req.body.value
     });
     res.json({
