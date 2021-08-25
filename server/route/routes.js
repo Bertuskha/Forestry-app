@@ -13,6 +13,18 @@ router.get('/api/getToken', (req, res) => {
     res.send(uid);
 })
 
+router.get('/api/getNumImages', async (req, res) => {
+    const amount = await Image.count();
+    res.send(String(amount));
+})
+
+router.post('/api/getImages', (req, res) => {
+    res.json({
+        status: "successfully received images",
+        imageIndex: req.body.imageIndex
+    })
+})
+
 router.post('/api/sendData', (req, res) => {
     const dataEntry = new Data({
         userID: req.body.userID,
