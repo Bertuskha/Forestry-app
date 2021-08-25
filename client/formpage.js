@@ -28,15 +28,26 @@ imageArray = shuffle(imageArray);
 console.log(imageArray);
 
 document.addEventListener('DOMContentLoaded', () => {
+    getImages();
     var allButtons = document.querySelectorAll('button[class^=small_btn]');
     console.log("Found", allButtons.length, "small buttons.");
+    var leftIMGContainer = document.getElementById('leftIMG');
+    var rightIMGContainer = document.getElementById('rightIMG');
 
     for (var i = 0; i < allButtons.length; i++) {
         allButtons[i].addEventListener('click', function() {
             var uid = sessionStorage.getItem('token');
             console.log("userID:", uid, "value:", this.id);
             sendData(uid, this.id);
-            getImages();
+            if(Number(imageIndex) < Number(imageCount)){
+                getImages();
+            }
+            else if(imageIndex === imageCount){
+                getImages();
+            }
+            else{
+                window.location.href = "./endpage.html";
+            }
         });
     }
     
@@ -63,8 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
             body: JSON.stringify(images)
         });
         let result = await response.json();
+        leftIMGContainer.src = result.leftIMG;
+        rightIMGContainer.src = result.rightIMG;
         console.log(result);
         imageIndex++;
+        console.log("Index", imageIndex, "length", imageArray.length);
     }
-   
 });

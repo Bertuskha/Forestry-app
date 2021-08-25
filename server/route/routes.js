@@ -18,10 +18,12 @@ router.get('/api/getNumImages', async (req, res) => {
     res.send(String(amount));
 })
 
-router.post('/api/getImages', (req, res) => {
+router.post('/api/getImages', async (req, res) => {
+    const pairIMG = await Image.findOne ({where: {id: req.body.imageIndex} });
     res.json({
         status: "successfully received images",
-        imageIndex: req.body.imageIndex
+        leftIMG: pairIMG.leftIMG,
+        rightIMG: pairIMG.rightIMG
     })
 })
 
