@@ -14,5 +14,9 @@ app.listen(PORT, () => {
   
 });
 
+app.get('*', (req, res) => {
+    res.sendFile('./index.html');
+});
+
 import {router} from './server/route/routes.js';
 app.use(router);
