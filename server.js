@@ -6,7 +6,7 @@ import sequelize from './server/db/db.js';
 // SERVER CONFIGURATION
 const app = express();
 const PORT = process.env.PORT || 3001;
-app.listen('https://forestry-app-6wzfdltqa-bertuskha.vercel.app/', () => {
+app.listen(PORT, () => {
     console.log(`Server listening at ${PORT}`);
     sequelize.sync({force: false})
         .then(() => console.log('Database connected'))
