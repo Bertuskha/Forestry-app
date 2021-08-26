@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     getToken();
 
     async function getNumImages() {
-        const response = await fetch('http://localhost:3001/api/getNumImages');
+        const response = await fetch('https://forestry-app.herokuapp.com/api/getNumImages');
         const result = await response.text();
         sessionStorage.setItem('imageCount', result);
     }  
