@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     
     async function getToken() {
-        const response = await fetch('http://localhost:3001/api/getToken');
+        const response = await fetch('https://forestry-app.herokuapp.com/api/getToken');
         const userID = await response.text();
         sessionStorage.setItem('token', userID);
         document.getElementById("token").innerHTML = "User ID: " + userID;
