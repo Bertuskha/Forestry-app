@@ -28,20 +28,40 @@ imageArray = shuffle(imageArray);
 console.log(imageArray);
 
 document.addEventListener('DOMContentLoaded', () => {
+    if(sessionStorage.getItem('valid') == 'false'){
+        window.location.href = './index.html'
+    }
+    sessionStorage.setItem('valid', false)
+    let active = true;
+    const wait=ms=>new Promise(resolve => setTimeout(resolve, ms));
+    getImages();
     var allButtons = document.querySelectorAll('button[class^=small_btn]');
     console.log("Found", allButtons.length, "small buttons.");
+    var leftIMGContainer = document.getElementById('leftIMG');
+    var rightIMGContainer = document.getElementById('rightIMG');
 
     for (var i = 0; i < allButtons.length; i++) {
-        allButtons[i].addEventListener('click', function() {
-            var uid = sessionStorage.getItem('token');
-            console.log("userID:", uid, "value:", this.id);
-            sendData(uid, this.id);
-            getImages();
+        allButtons[i].addEventListener('click', async function() {
+            if(active === true){
+                var uid = sessionStorage.getItem('token');
+                console.log("userID:", uid, "value:", this.id);
+                sendData(uid, this.id);
+                if(Number(imageIndex) < Number(imageCount)){
+                    getImages();
+                }
+                else if(imageIndex === imageCount){
+                    getImages();
+                }
+                else{
+                    active = false;
+                    wait(1000).then(() => window.location.href = "./endpage.html");
+                }
+            }
         });
     }
     
     async function sendData(uid, value){
-        let data = {userID: uid, value:  value};
+        let data = {userID: uid, questionID: imageArray[imageIndex-1], value:  value};
         let response = await fetch('http://localhost:3001/api/sendData', {
             method: "POST",
             headers: {
@@ -63,8 +83,10 @@ document.addEventListener('DOMContentLoaded', () => {
             body: JSON.stringify(images)
         });
         let result = await response.json();
+        leftIMGContainer.src = result.leftIMG;
+        rightIMGContainer.src = result.rightIMG;
         console.log(result);
         imageIndex++;
+        console.log("Index", imageIndex, "length", imageArray.length);
     }
-   
 });

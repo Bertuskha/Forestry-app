@@ -9,6 +9,10 @@ Data.init({
         type: DataTypes.STRING,
         allowNull: false
     },
+    questionID:{
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
     value:{
         type: DataTypes.INTEGER,
         allowNull: false
