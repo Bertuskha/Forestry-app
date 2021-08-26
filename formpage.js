@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     async function sendData(uid, value){
         let data = {userID: uid, questionID: imageArray[imageIndex-1], value:  value};
-        let response = await fetch('http://localhost:3001/api/sendData', {
+        let response = await fetch('https://forestry-app-6wzfdltqa-bertuskha.vercel.app/api/sendData', {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     async function getImages(){
         let images = {imageIndex: imageArray[imageIndex]};
-        let response = await fetch('http://localhost:3001/api/getImages', {
+        let response = await fetch('https://forestry-app-6wzfdltqa-bertuskha.vercel.app/api/getImages', {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
