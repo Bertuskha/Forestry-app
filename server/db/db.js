@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 dotenv.config({path: '../config/.env'});
 
 const sequelize = new Sequelize ('forestryData', 'root', 'M4tryo.shka', {
-    host: process.env.hostname,
+    host: 'https://forestry-app.herokuapp.com/',
     dialect: 'mysql',
     define: {
         timestamps: false
