@@ -17,6 +17,7 @@ Image.init({
 {
     sequelize,
     modelName: "images",
+    timestamps: false,
 })
 
 export default Image;

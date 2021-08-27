@@ -20,7 +20,8 @@ Data.init({
 },
 {
     sequelize,
-    modelName: "data"
+    modelName: "data",
+    timestamps: false,
 })
 
 export default Data;
