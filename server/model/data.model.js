@@ -20,7 +20,7 @@ Data.init({
 },
 {
     sequelize,
-    modelName: "Data"
+    modelName: "data"
 })
 
 export default Data;

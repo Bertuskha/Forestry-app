@@ -16,7 +16,7 @@ Image.init({
 },
 {
     sequelize,
-    modelName: "Images",
+    modelName: "images",
 })
 
 export default Image;
