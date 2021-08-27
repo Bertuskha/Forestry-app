@@ -15,6 +15,6 @@ https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Ft
 https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.zpbYb9AGZKtXvc2Ts0epywHaJ4%26pid%3DApi&f=1
 https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.3nodJIvk1Ops90UmvFLrwgHaE8%26pid%3DApi&f=1
 
-insert into Images (leftIMG, rightIMG) values ('','');
+insert into Images (leftIMG, rightIMG) values ('https://wiki.uef.fi/download/attachments/40417788/11260690_10205298163194300_7103233539265415681_o.jpg','https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwallpoper.com%2Fimages%2F00%2F29%2F00%2F25%2Fforest_00290025.jpg&f=1&nofb=1');
 
 SELECT * FROM `Data` INTO OUTFILE 'Data.txt' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\r\n'
