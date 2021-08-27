@@ -1,3 +1,4 @@
+screen.orientation.lock('landscape');
 document.addEventListener('DOMContentLoaded', () => {
     
     async function getToken() {

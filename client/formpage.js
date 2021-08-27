@@ -1,3 +1,4 @@
+screen.orientation.lock('landscape');
 const imageCount = sessionStorage.getItem('imageCount');
 let imageArray = [];
 
