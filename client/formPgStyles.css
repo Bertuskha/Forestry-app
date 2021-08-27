@@ -1,18 +1,20 @@
 body, html {
     height: 100%;
-    background-color: black;
+    background-color: rgb(31, 28, 37);
 }
 
 .question {
     text-align: center;
     margin-top: 0%;
     margin-bottom: 1%;
+    color: white;
 }
 
 .subtitle {
     text-align: center;
     margin-top: 0%;
-    margin-bottom: 1%; 
+    margin-bottom: 1%;
+    color: white; 
 }
 .wrap {
     width: 100%;
