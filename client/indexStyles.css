@@ -1,7 +1,9 @@
 #warning-message { 
     display: none;
     color:white;
-    font-size: x-large; 
+    font-size: xx-large;
+    background-color: red;
+    height:100%;  
 }
 @media only screen and (orientation:portrait){
     #wrapper { display:none; }
