@@ -2,7 +2,7 @@ import {Sequelize} from 'sequelize';
 import Client from 'pg';
 import dotenv from 'dotenv';
 dotenv.config({path: '../config/.env'});
-
+/**
 const sequelize = new Sequelize(process.env.DATABASE_URL, {
     dialectOptions: {
       ssl: {
@@ -12,6 +12,20 @@ const sequelize = new Sequelize(process.env.DATABASE_URL, {
     }
   }
 );
+*/
+const sequelize = new Sequelize ('d9qfltv726qbf5', 'svptpogaockioz', 'cdc316687e5dde0b63746f5c3a0ea095fe786280dd82c7b225543d251d9b10f1', {
+    host: 'ec2-35-153-114-74.compute-1.amazonaws.com:5432',
+    dialectOptions: {
+        ssl: {
+          require: true,
+          rejectUnauthorized: false
+        }
+    },
+    define: {
+        timestamps: false
+    },
+});
+
 
 sequelize
   .authenticate()
