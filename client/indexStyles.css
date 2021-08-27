@@ -22,6 +22,10 @@ body {
     margin-top: 4%;
 }
 
+.token{
+    color: white;
+}
+
 .token span{
     padding: 5px;
     border: 2px solid #04aa57;
