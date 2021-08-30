@@ -5,18 +5,19 @@ import sequelize from '../db/db.js';
 class Image extends Model {}
 
 Image.init({
-    leftIMG:{
+    leftimg:{
         type: DataTypes.STRING,
         allowNull: false
     },
-    rightIMG:{
+    rightimg:{
         type: DataTypes.STRING,
         allowNull: false
     }
 },
 {
     sequelize,
-    modelName: "Images",
+    modelName: "images",
+    timestamps: false,
 })
 
 export default Image;

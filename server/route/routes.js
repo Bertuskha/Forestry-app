@@ -22,15 +22,15 @@ router.post('/api/getImages', async (req, res) => {
     const pairIMG = await Image.findOne ({where: {id: req.body.imageIndex} });
     res.json({
         status: "successfully received images",
-        leftIMG: pairIMG.leftIMG,
-        rightIMG: pairIMG.rightIMG
+        leftIMG: pairIMG.leftimg,
+        rightIMG: pairIMG.rightimg
     })
 })
 
 router.post('/api/sendData', (req, res) => {
     const dataEntry = new Data({
-        userID: req.body.userID,
-        questionID: req.body.questionID,
+        userid: req.body.userID,
+        questionid: req.body.questionID,
         value: req.body.value
     });
     res.json({

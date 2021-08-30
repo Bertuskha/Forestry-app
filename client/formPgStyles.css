@@ -1,0 +1,186 @@
+#warning-message { 
+  display: none;
+  color:white;
+  font-size: xx-large;
+  background-color: red;
+  height: 100%; 
+}
+@media only screen and (orientation:portrait){
+    #wrapper { display:none; }
+    #warning-message { display:block; }
+}
+@media only screen and (orientation:landscape){
+    #warning-message { display:none; }
+}
+
+body, html {
+    height: 100%;
+    background-color: rgb(20, 18, 24);
+}
+
+.question {
+    text-align: center;
+    margin-top: 0%;
+    margin-bottom: 1%;
+    color: white;
+}
+
+.subtitle {
+    text-align: center;
+    margin-top: 0%;
+    margin-bottom: 1%;
+    color: white; 
+}
+.wrap {
+    width: 100%;
+    height: 77%;
+}
+
+.floatleft {
+    float:left; 
+    height: 100%;
+    width: 50%;
+}
+
+.floatright {
+float: right;
+    height: 100%;
+    width: 50%;
+}
+
+.image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: 0% 100%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: "button1 button2 button3 button4 button5 button6 button7";
+    grid-gap: 5px;
+}
+
+.small_btn {
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+
+.button1 {
+  background-color: black; 
+  color: white; 
+  border: 2px solid #45b888;
+}
+
+.button1:hover {
+  background-color: #45b888;
+  color: black;
+}
+
+.button1:active {
+  background-color: #2c7758;
+  transition: 0.1s;
+}
+
+.button2 {
+  background-color: black; 
+  color: white; 
+  border: 2px solid #4CAF50;
+}
+
+.button2:hover {
+  background-color: #4CAF50;
+  color: black;
+}
+
+.button2:active {
+  background-color: #307032;
+  transition: 0.1s;
+}
+
+.button3 {
+  background-color: black; 
+  color: white; 
+  border: 2px solid #90b833;
+}
+
+.button3:hover {
+  background-color: #90b833;
+  color: black;
+}
+
+.button3:active {
+  background-color: #52691d;
+  transition: 0.1s;
+}
+
+.button4 {
+  background-color: black;
+  color: white;
+  border: 2px solid #e0de3e;
+}
+
+.button4:hover {
+  background-color: #e0de3e;
+  color: black;
+}
+
+.button4:active {
+  background-color: #747221;
+  transition: 0.1s;
+}
+
+.button5 {
+  background-color: black;
+  color: white;
+  border: 2px solid #f5a347;
+}
+
+.button5:hover {
+  background-color: #f5a347;
+  color: black;
+}
+
+.button5:active {
+  background-color: #8f602b;
+  transition: 0.1s;
+}
+
+.button6 {
+  background-color: black;
+  color: white;
+  border: 2px solid #e76f29;
+}
+
+.button6:hover {
+  background-color: #e76f29;
+  color: black;
+}
+
+.button6:active {
+  background-color: #8b4217;
+  transition: 0.1s;
+}
+
+.button7 {
+  background-color: black;
+  color: white;
+  border: 2px solid #e64242;
+}
+
+.button7:hover {
+  background-color: #e64242;
+  color: black;
+}
+
+.button7:active {
+  background-color: #802323;
+  transition: 0.1s;
+}

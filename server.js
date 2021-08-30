@@ -2,7 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 dotenv.config({path: './server/config/.env'});
 import sequelize from './server/db/db.js';
- 
+
 // SERVER CONFIGURATION
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -16,3 +16,5 @@ app.listen(PORT, () => {
 
 import {router} from './server/route/routes.js';
 app.use(router);
+
+app.use(express.static('client'));

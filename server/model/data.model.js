@@ -5,11 +5,11 @@ import sequelize from '../db/db.js';
 class Data extends Model {}
 
 Data.init({
-    userID:{
+    userid:{
         type: DataTypes.STRING,
         allowNull: false
     },
-    questionID:{
+    questionid:{
         type: DataTypes.INTEGER,
         allowNull: false
     },
@@ -20,7 +20,8 @@ Data.init({
 },
 {
     sequelize,
-    modelName: "Data"
+    modelName: "data",
+    timestamps: false,
 })
 
 export default Data;
