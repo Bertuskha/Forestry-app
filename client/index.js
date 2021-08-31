@@ -23,13 +23,15 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const customID = document.getElementById('customID');
     const form = document.getElementById('form');
-    form.addEventListener('submit', () => {
+    form.addEventListener('submit', (e) => {
         if(customID.value === '' || customID.value == null){
             
         }
         else{
             sessionStorage.setItem('token', customID.value);
         }
+        window.href.location = './formpage.html'
+        e.preventDefault();
     });
     const btn = document.getElementById("Begin");
     
