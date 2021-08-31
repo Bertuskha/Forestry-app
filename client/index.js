@@ -19,10 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }  
     getNumImages();
 
-    sessionStorage.setItem('valid', true);
-
     const btn = document.getElementById("Begin");
     btn.onclick = function(){
+        sessionStorage.setItem('valid', true);
         window.location.href = "./formpage.html";
     }
 });
