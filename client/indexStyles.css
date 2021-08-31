@@ -98,7 +98,7 @@ body {
     transform: translateY(4px);
 }
 
-.customID span{
+input{
     padding: 5px;
     border: 2px solid #04aa57;
     border-radius: 10px;
