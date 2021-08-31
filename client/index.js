@@ -1,3 +1,6 @@
+if(sessionStorage.getItem('valid') === "false"){
+    window.location.href = "./index.js";
+}
 document.addEventListener('DOMContentLoaded', () => {
     
     async function getToken() {

@@ -28,7 +28,7 @@ imageArray = shuffle(imageArray);
 console.log(imageArray);
 
 document.addEventListener('DOMContentLoaded', () => {
-    if(sessionStorage.getItem('valid') == 'false'){
+    if(sessionStorage.getItem('valid') === 'false'){
         window.location.href = './index.html'
     }
     sessionStorage.setItem('valid', false)
