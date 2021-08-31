@@ -104,8 +104,9 @@ input{
     border-radius: 10px;
     display: inline-block;
     background-color: #000000;
-    box-shadow: 0 4px #01351b;
+    box-shadow: 0 4px rgb(48, 92, 50);
     margin-top: 2%;
     margin-right: 3%;
     font-size: large;
+    text-align: center;
 }
