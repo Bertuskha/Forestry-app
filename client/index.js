@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         else{
             sessionStorage.setItem('token', customID.value);
         }
+        sessionStorage.setItem('valid', true);
         window.href.location = './formpage.html'
         e.preventDefault();
     });
