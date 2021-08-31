@@ -1,5 +1,6 @@
 if(sessionStorage.getItem('valid') === "false"){
-    window.location.href = "./index.js";
+    window.location.href = "./index.html";
+    sessionStorage.setItem('valid', true);
 }
 document.addEventListener('DOMContentLoaded', () => {
     
