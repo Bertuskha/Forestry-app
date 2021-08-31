@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const userID = await response.text();
         sessionStorage.setItem('token', userID);
         document.getElementById("token").innerHTML = "User ID: " + userID;
-    }  
+    } 
+
     getToken();
 
     async function getNumImages() {
@@ -19,9 +20,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }  
     getNumImages();
 
+    
+    const customID = document.getElementById('customID');
+    const form = document.getElementById('form');
+    form.addEventListener('submit', () => {
+        if(customID.value === '' || customID.value == null){
+            
+        }
+        else{
+            sessionStorage.setItem('token', customID.value);
+        }
+    });
     const btn = document.getElementById("Begin");
-    btn.onclick = function(){
+    
+    /*btn.onclick = function(){
         sessionStorage.setItem('valid', true);
         window.location.href = "./formpage.html";
-    }
+    }*/
 });
