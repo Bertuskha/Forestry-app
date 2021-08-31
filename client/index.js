@@ -21,22 +21,16 @@ document.addEventListener('DOMContentLoaded', () => {
     getNumImages();
 
     
-    const customID = document.getElementById('customID');
-    const form = document.getElementById('form');
-    form.addEventListener('submit', () => {
+    const customID = document.getElementById("customID");
+    const btn = document.getElementById("Begin");
+    btn.onclick = function(){
         if(customID.value === '' || customID.value == null){
-            
+            console.log("normal ID");
         }
         else{
             sessionStorage.setItem('token', customID.value);
         }
         sessionStorage.setItem('valid', true);
-        window.href.location = './formpage.html'
-    });
-    const btn = document.getElementById("Begin");
-    
-    /*btn.onclick = function(){
-        sessionStorage.setItem('valid', true);
         window.location.href = "./formpage.html";
-    }*/
+    }
 });
