@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const customID = document.getElementById('customID');
     const form = document.getElementById('form');
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', () => {
         if(customID.value === '' || customID.value == null){
             
         }
@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         sessionStorage.setItem('valid', true);
         window.href.location = './formpage.html'
-        e.preventDefault();
     });
     const btn = document.getElementById("Begin");
     
