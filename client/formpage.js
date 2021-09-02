@@ -26,6 +26,7 @@ function shuffle(array) {
 let imageIndex = 0;
 imageArray = shuffle(imageArray);
 console.log(imageArray);
+const userID = sessionStorage.getItem('token');
 
 document.addEventListener('DOMContentLoaded', () => {
     if(sessionStorage.getItem('valid') === 'false'){
@@ -43,9 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
     for (var i = 0; i < allButtons.length; i++) {
         allButtons[i].addEventListener('click', async function() {
             if(active === true){
-                var uid = sessionStorage.getItem('token');
-                console.log("userID:", uid, "value:", this.id);
-                sendData(uid, this.id);
+                console.log("userID:", userID, "value:", this.id);
+                sendData(this.id);
                 if(Number(imageIndex) < Number(imageCount)){
                     getImages();
                 }
@@ -60,8 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    async function sendData(uid, value){
-        let data = {userID: uid, questionID: imageArray[imageIndex-1], value:  value};
+    async function sendData (value){
+        let data = {userID: userID, questionID: imageArray[imageIndex-1], value:  value};
         let response = await fetch('https://forestry-app.herokuapp.com/api/sendData', {
             method: "POST",
             headers: {
