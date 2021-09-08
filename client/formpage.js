@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     async function getImages(){
-        let images = {imageIndex: imageIndex+1};
+        let images = {imageIndex: Number(imageIndex)+1};
         let response = await fetch('https://forestry-app.herokuapp.com/api/getImages', {
             method: "POST",
             headers: {
