@@ -1,28 +1,12 @@
 const userID = sessionStorage.getItem('token');
 const imageCount = sessionStorage.getItem('imageCount');
 let imageIndex = sessionStorage.getItem('index');
-/**
-async function getIndex (userID){
-    let requestData = {userID: userID};
-    let response = await fetch('https://forestry-app.herokuapp.com/api/getIndex', {
-        method: "POST",
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(requestData)
-    });
-    let result = await response.json();
-    console.log(result);
-    return Number(result.index);
-}
 
-let imageIndex = await getIndex(userID);
-*/
 document.addEventListener('DOMContentLoaded', () => {
     if(sessionStorage.getItem('valid') === 'false'){
         window.location.href = './index.html'
     }
-    //sessionStorage.setItem('valid', false)
+    sessionStorage.setItem('valid', false)
     let active = true;
     const wait=ms=>new Promise(resolve => setTimeout(resolve, ms));
     console.log("getting first images...");
@@ -42,13 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     getImages();
                     imageIndex++;
                     sessionStorage.setItem('index', imageIndex);
-                    setIndex();
                 }
                 else if(imageIndex === imageCount){
                     getImages();
                     imageIndex++;
                     sessionStorage.setItem('index', imageIndex);
-                    setIndex();
                 }
                 else{
                     active = false;
@@ -87,18 +69,5 @@ document.addEventListener('DOMContentLoaded', () => {
         rightIMGContainer.src = result.rightIMG;
         console.log(result);
         console.log("Index", imageIndex, "length", imageCount);
-    }
-
-    async function setIndex(){
-        let index = {imageIndex: imageIndex};
-        let response = await fetch('https://forestry-app.herokuapp.com/api/setIndex', {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(index)
-        });
-        let result = await response.json();
-        console.log(result);
     }
 });
