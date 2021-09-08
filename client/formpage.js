@@ -12,7 +12,7 @@ async function getIndex (userID){
     });
     let result = await response.json();
     console.log(result);
-    return result.index;
+    return Number(result.index);
 }
 
 let imageIndex = 0;
