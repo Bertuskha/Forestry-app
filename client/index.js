@@ -29,4 +29,5 @@ document.addEventListener('DOMContentLoaded', () => {
         sessionStorage.setItem('valid', true);
         window.location.href = "./formpage.html";
     }
+    sessionStorage.setItem('index', 1);
 });

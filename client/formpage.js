@@ -1,6 +1,7 @@
 const userID = sessionStorage.getItem('token');
 const imageCount = sessionStorage.getItem('imageCount');
-
+let imageIndex = sessionStorage.getItem('index');
+/**
 async function getIndex (userID){
     let requestData = {userID: userID};
     let response = await fetch('https://forestry-app.herokuapp.com/api/getIndex', {
@@ -16,7 +17,7 @@ async function getIndex (userID){
 }
 
 let imageIndex = await getIndex(userID);
-
+*/
 document.addEventListener('DOMContentLoaded', () => {
     if(sessionStorage.getItem('valid') === 'false'){
         window.location.href = './index.html'
@@ -24,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
     sessionStorage.setItem('valid', false)
     let active = true;
     const wait=ms=>new Promise(resolve => setTimeout(resolve, ms));
-    wait(1000);
     console.log("getting first images...");
     getImages();
     var allButtons = document.querySelectorAll('button[class^=small_btn]');
