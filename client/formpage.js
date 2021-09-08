@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     async function sendData (value){
-        let data = {userID: userID, questionID: imageArray[imageIndex-1], value:  value};
+        let data = {userID: userID, questionID: imageIndex, value:  value};
         let response = await fetch('https://forestry-app.herokuapp.com/api/sendData', {
             method: "POST",
             headers: {
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         leftIMGContainer.src = result.leftIMG;
         rightIMGContainer.src = result.rightIMG;
         console.log(result);
-        console.log("Index", imageIndex, "length", imageArray.length);
+        console.log("Index", imageIndex, "length", imageCount);
     }
 
     async function setIndex(){
