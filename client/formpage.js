@@ -20,14 +20,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 sendData(this.id);
                 if(Number(imageIndex) < Number(imageCount)){
                     console.log("getting images...")
-                    getImages();
                     imageIndex++;
                     sessionStorage.setItem('index', imageIndex);
+                    getImages(); 
                 }
                 else if(imageIndex === imageCount){
-                    getImages();
                     imageIndex++;
                     sessionStorage.setItem('index', imageIndex);
+                    getImages();          
                 }
                 else{
                     active = false;
