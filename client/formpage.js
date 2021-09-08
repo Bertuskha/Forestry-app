@@ -19,12 +19,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log("userID:", userID, "value:", this.id);
                 sendData(this.id);
                 if(Number(imageIndex) < Number(imageCount)){
+                    leftIMGContainer.src = "";
+                    rightIMGContainer.src = "";
                     console.log("getting images...")
                     imageIndex++;
                     sessionStorage.setItem('index', imageIndex);
                     getImages(); 
                 }
                 else if(imageIndex === imageCount){
+                    leftIMGContainer.src = "";
+                    rightIMGContainer.src = "";
                     imageIndex++;
                     sessionStorage.setItem('index', imageIndex);
                     getImages();          
@@ -51,8 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     async function getImages(){
-        leftIMGContainer.src = "";
-        rightIMGContainer.src = "";
         let images = {imageIndex: Number(imageIndex)};
         let response = await fetch('https://forestry-app.herokuapp.com/api/getImages', {
             method: "POST",
