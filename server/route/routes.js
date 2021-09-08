@@ -37,7 +37,7 @@ router.post('/api/getIndex', async (req, res) => {
         });
         res.json({
             status: "new user without progress",
-            index: indexEntry.questionindex;
+            index: indexEntry.questionindex
         });
         indexEntry.save()
         .then((res) => {
