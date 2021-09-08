@@ -1,32 +1,19 @@
-const imageCount = sessionStorage.getItem('imageCount');
-let imageArray = [];
-
-for(var i = 0; i < imageCount; i++){
-    imageArray[i] = i+1;
-}
-
-function shuffle(array) {
-    var currentIndex = array.length,  randomIndex;
-
-    // While there remain elements to shuffle...
-    while (currentIndex != 0) {
-
-        // Pick a remaining element...
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex--;
-
-        // And swap it with the current element.
-        [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex], array[currentIndex]];
-    }
-
-    return array;
-}
-
-let imageIndex = 0;
-imageArray = shuffle(imageArray);
-console.log(imageArray);
 const userID = sessionStorage.getItem('token');
+
+async function getIndex (userID){
+    let requestData = {userID: userID};
+    let response = await fetch('https://forestry-app.herokuapp.com/api/sendData', {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(requestData)
+    });
+    let result = await response.json();
+    console.log(result);
+}
+
+getIndex(userID);
 
 document.addEventListener('DOMContentLoaded', () => {
     if(sessionStorage.getItem('valid') === 'false'){

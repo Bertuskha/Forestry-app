@@ -2,6 +2,7 @@ import express from 'express';
 import ShortUniqueID from 'short-unique-id';
 import Data from '../model/data.model.js';
 import Image from '../model/image.model.js';
+import Index from '../model/index.model.js';
 
 const router = express.Router();
 router.use(express.json());
@@ -19,12 +20,39 @@ router.get('/api/getNumImages', async (req, res) => {
 })
 
 router.post('/api/getImages', async (req, res) => {
-    const pairIMG = await Image.findOne ({where: {id: req.body.imageIndex} });
+    const pairIMG = await Image.findOne({where: {id: req.body.imageIndex} });
     res.json({
         status: "successfully received images",
         leftIMG: pairIMG.leftimg,
         rightIMG: pairIMG.rightimg
     })
+})
+
+router.post('/api/getIndex', async (req, res) => {
+    const indexRow = await Index.findOne({where: {userid: req.body.userID} });
+    if(indexRow == null){
+        res.json({
+            status: "new user without progress",
+            index: 0
+        });
+    }
+    else{
+        res.json({
+            status: "returning user, loaded saved progress",
+            index: indexRow.questionindex
+        });
+    }
+})
+
+router.post('/api/setIndex', async (req, res) => {
+    Index.update({questionindex: req.body.imageIndex}, {where: {userid: req.body.userID} });
+    const amount = await Image.count();
+    res.json({
+        status: "sucessfully saved progress index",
+        stop: req.body.imageIndex >= amount,
+        userID: req.body.userID,
+        index: req.body.imageIndex
+    });
 })
 
 router.post('/api/sendData', (req, res) => {

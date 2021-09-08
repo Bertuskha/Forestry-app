@@ -17,4 +17,5 @@ https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Ft
 
 insert into Images (leftIMG, rightIMG) values ('','');
 
-\COPY users TO '~/user_export.csv' WITH (FORMAT csv, DELIMITER ',',  HEADER true);
+\COPY data TO '~/data_export.csv' WITH (FORMAT csv, DELIMITER ',',  HEADER true);
+\copy images FROM ~/image_inport.csv WITH (FORMAT CSV);
