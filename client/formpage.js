@@ -14,8 +14,10 @@ async function getIndex (userID){
     console.log(result);
     return Number(result.index);
 }
-console.log(getIndex(userID));
-let imageIndex = 0;
+let imageProcess = await getIndex(userID);
+console.log(imageProcess);
+let imageIndex = imageProcess;
+console.log(imageIndex);
 console.log ("image index", imageIndex);
 
 document.addEventListener('DOMContentLoaded', () => {
