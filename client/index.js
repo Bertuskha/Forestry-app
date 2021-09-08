@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
             sessionStorage.setItem('token', customID.value);
         }
         sessionStorage.setItem('valid', true);
-        window.location.href = "./formpage.html";
     }
-    sessionStorage.setItem('index', 1);
+    sessionStorage.setItem('index', 0);
 });
