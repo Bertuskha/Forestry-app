@@ -15,8 +15,8 @@ async function getIndex (userID){
     return result.index;
 }
 
-let imageIndex = await getIndex(userID);
-imageIndex = Number(imageIndex);
+let imageIndex = 0;
+const offset = await getIndex(userID);
 console.log ("image index", imageIndex);
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sessionStorage.setItem('valid', false)
     let active = true;
     const wait=ms=>new Promise(resolve => setTimeout(resolve, ms));
+    imageIndex += offset;
     console.log("getting first images...");
     getImages();
     var allButtons = document.querySelectorAll('button[class^=small_btn]');
@@ -83,6 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
         leftIMGContainer.src = result.leftIMG;
         rightIMGContainer.src = result.rightIMG;
         console.log(result);
+        imageIndex++;
         console.log("Index", imageIndex, "length", imageCount);
     }
 
@@ -97,6 +99,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         let result = await response.json();
         console.log(result);
-        imageIndex++;
     }
 });
