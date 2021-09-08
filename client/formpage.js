@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if(sessionStorage.getItem('valid') === 'false'){
         window.location.href = './index.html'
     }
-    sessionStorage.setItem('valid', false)
+    //sessionStorage.setItem('valid', false)
     let active = true;
     const wait=ms=>new Promise(resolve => setTimeout(resolve, ms));
     console.log("getting first images...");
