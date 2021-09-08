@@ -16,7 +16,6 @@ async function getIndex (userID){
 }
 
 let imageIndex = 1;
-const offset = await getIndex(userID);
 console.log ("image index", imageIndex);
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -26,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
     sessionStorage.setItem('valid', false)
     let active = true;
     const wait=ms=>new Promise(resolve => setTimeout(resolve, ms));
-    //imageIndex += offset;
     console.log("getting first images...");
     getImages();
     var allButtons = document.querySelectorAll('button[class^=small_btn]');
