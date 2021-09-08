@@ -40,10 +40,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 if(Number(imageIndex) < Number(imageCount)){
                     console.log("getting images...")
                     getImages();
+                    imageIndex++;
+                    sessionStorage.setItem('index', imageIndex);
                     setIndex();
                 }
                 else if(imageIndex === imageCount){
                     getImages();
+                    imageIndex++;
+                    sessionStorage.setItem('index', imageIndex);
                     setIndex();
                 }
                 else{
@@ -80,8 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
         leftIMGContainer.src = result.leftIMG;
         rightIMGContainer.src = result.rightIMG;
         console.log(result);
-        imageIndex++;
-        sessionStorage.setItem('index', imageIndex);
         console.log("Index", imageIndex, "length", imageCount);
     }
 
