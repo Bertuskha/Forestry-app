@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sessionStorage.setItem('valid', false)
     let active = true;
     const wait=ms=>new Promise(resolve => setTimeout(resolve, ms));
+    wait(1000);
     console.log("getting first images...");
     getImages();
     var allButtons = document.querySelectorAll('button[class^=small_btn]');
