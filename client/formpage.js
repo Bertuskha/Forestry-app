@@ -28,14 +28,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     imageIndex++;
                     sessionStorage.setItem('index', imageIndex);
                     getImages(); 
-                }
+                }/**
                 else if(imageIndex === imageCount){
                     leftIMGContainer.src = "";
                     rightIMGContainer.src = "";
                     imageIndex++;
                     sessionStorage.setItem('index', imageIndex);
                     getImages();          
-                }
+                }*/
                 else{
                     active = false;
                     wait(1000).then(() => window.location.href = "./endpage.html");
