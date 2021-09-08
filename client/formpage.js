@@ -3,7 +3,7 @@ const imageCount = sessionStorage.getItem('imageCount');
 let imageIndex = sessionStorage.getItem('index');
 
 document.addEventListener('DOMContentLoaded', () => {
-    sessionStorage.setItem('valid', false)
+    //sessionStorage.setItem('valid', false)
     let active = true;
     const wait=ms=>new Promise(resolve => setTimeout(resolve, ms));
     console.log("getting first images...");
