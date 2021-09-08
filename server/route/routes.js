@@ -33,11 +33,11 @@ router.post('/api/getIndex', async (req, res) => {
     if(indexRow == null){
         const indexEntry = new Index({
             userid: req.body.userID,
-            questionindex: 0,
+            questionindex: 1,
         });
         res.json({
             status: "new user without progress",
-            index: 0
+            index: indexEntry.questionindex;
         });
         indexEntry.save()
         .then((res) => {
