@@ -81,6 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         rightIMGContainer.src = result.rightIMG;
         console.log(result);
         imageIndex++;
+        sessionStorage.setItem('index', imageIndex);
         console.log("Index", imageIndex, "length", imageCount);
     }
 
