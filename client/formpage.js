@@ -2,7 +2,7 @@ const userID = sessionStorage.getItem('token');
 
 async function getIndex (userID){
     let requestData = {userID: userID};
-    let response = await fetch('https://forestry-app.herokuapp.com/api/sendData', {
+    let response = await fetch('https://forestry-app.herokuapp.com/api/getIndex', {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
