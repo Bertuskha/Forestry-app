@@ -1,9 +1,12 @@
 const userID = sessionStorage.getItem('token');
 const imageCount = sessionStorage.getItem('imageCount');
 let imageIndex = sessionStorage.getItem('index');
+if(imageIndex > imageCount){
+    window.location.href = './endpage.html';
+}
 
 document.addEventListener('DOMContentLoaded', () => {
-    //sessionStorage.setItem('valid', false)
+    sessionStorage.setItem('valid', false)
     let active = true;
     const wait=ms=>new Promise(resolve => setTimeout(resolve, ms));
     console.log("getting first images...");
