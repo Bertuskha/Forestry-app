@@ -15,7 +15,7 @@ async function getIndex (userID){
     return Number(result.index);
 }
 
-let imageIndex = 0;
+let imageIndex = 1;
 const offset = await getIndex(userID);
 console.log ("image index", imageIndex);
 
