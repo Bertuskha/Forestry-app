@@ -1,4 +1,5 @@
 const userID = sessionStorage.getItem('token');
+const imageCount = sessionStorage.getItem('imageCount');
 
 async function getIndex (userID){
     let requestData = {userID: userID};
@@ -37,9 +38,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 sendData(this.id);
                 if(Number(imageIndex) < Number(imageCount)){
                     getImages();
+                    setIndex();
                 }
                 else if(imageIndex === imageCount){
                     getImages();
+                    setIndex();
                 }
                 else{
                     active = false;
@@ -63,7 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     async function getImages(){
-        let images = {imageIndex: imageArray[imageIndex]};
+        leftIMGContainer.src = "";
+        rightIMGContainer.src = "";
+        let images = {imageIndex: imageIndex};
         let response = await fetch('https://forestry-app.herokuapp.com/api/getImages', {
             method: "POST",
             headers: {
@@ -75,7 +80,20 @@ document.addEventListener('DOMContentLoaded', () => {
         leftIMGContainer.src = result.leftIMG;
         rightIMGContainer.src = result.rightIMG;
         console.log(result);
-        imageIndex++;
         console.log("Index", imageIndex, "length", imageArray.length);
+    }
+
+    async function setIndex(){
+        let index = {imageIndex: imageIndex};
+        let response = await fetch('https://forestry-app.herokuapp.com/api/setIndex', {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(index)
+        });
+        let result = await response.json();
+        console.log(result);
+        imageIndex++;
     }
 });

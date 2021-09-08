@@ -31,9 +31,20 @@ router.post('/api/getImages', async (req, res) => {
 router.post('/api/getIndex', async (req, res) => {
     const indexRow = await Index.findOne({where: {userid: req.body.userID} });
     if(indexRow == null){
+        const indexEntry = new Index({
+            userid: req.body.userID,
+            questionindex: 0,
+        });
         res.json({
             status: "new user without progress",
             index: 0
+        });
+        indexEntry.save()
+        .then((res) => {
+            console.log(res);
+        })
+        .catch((err) =>{
+            console.log(err);
         });
     }
     else{
@@ -46,10 +57,8 @@ router.post('/api/getIndex', async (req, res) => {
 
 router.post('/api/setIndex', async (req, res) => {
     Index.update({questionindex: req.body.imageIndex}, {where: {userid: req.body.userID} });
-    const amount = await Image.count();
     res.json({
         status: "sucessfully saved progress index",
-        stop: req.body.imageIndex >= amount,
         userID: req.body.userID,
         index: req.body.imageIndex
     });
