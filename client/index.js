@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const response = await fetch('https://forestry-app.herokuapp.com/api/getToken');
         const userID = await response.text();
         sessionStorage.setItem('token', userID);
+        sessionStorage.setItem('index', 1);
         document.getElementById("token").innerHTML = "User ID: " + userID;
     } 
 
@@ -27,6 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
             sessionStorage.setItem('token', customID.value);
         }
         sessionStorage.setItem('valid', true);
+        window.location.href = "./formpage.html";
     }
-    sessionStorage.setItem('index', 0);
 });
