@@ -11,9 +11,11 @@ async function getIndex (userID){
     });
     let result = await response.json();
     console.log(result);
+    return result.index;
 }
 
-getIndex(userID);
+let imageIndex = getIndex(userID);
+console.log ("image index", imageIndex);
 
 document.addEventListener('DOMContentLoaded', () => {
     if(sessionStorage.getItem('valid') === 'false'){
