@@ -14,7 +14,7 @@ async function getIndex (userID){
     console.log(result);
     return Number(result.index);
 }
-
+console.log(getIndex(userID));
 let imageIndex = 0;
 console.log ("image index", imageIndex);
 
@@ -68,7 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     async function getImages(){
-        console.log("starting function getImages()")
         let images = {imageIndex: imageIndex+1};
         let response = await fetch('https://forestry-app.herokuapp.com/api/getImages', {
             method: "POST",
@@ -78,7 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
             body: JSON.stringify(images)
         });
         let result = await response.json();
-        console.log("promise handled");
         leftIMGContainer.src = result.leftIMG;
         rightIMGContainer.src = result.rightIMG;
         console.log(result);
