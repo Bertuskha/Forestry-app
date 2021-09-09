@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById("token").innerHTML = "User ID: " + userID;
     } 
 
-    if(sessionStorage.getItem('valid') == null){
+    if(sessionStorage.getItem('started') == null){
         sessionStorage.setItem('index', 1);
     }
     getToken();
