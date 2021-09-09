@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const customID = document.getElementById("customID"); //custom user ID input element
     const btn = document.getElementById("Begin");         //Button that starts the form
     btn.onclick = function(){
-        if(customID.value === '' || customID.value == null || customID.value.size != 6){
+        if(customID.value === '' || customID.value == null || customID.value.length != 6){
             console.log("normal ID");
         }
         else{
