@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if(sessionStorage.getItem('valid') == "true"){
         sessionStorage.setItem('index', 1);
-        getToken();
     }
+    getToken();
 
     async function getNumImages() {
         const response = await fetch('https://forestry-app.herokuapp.com/api/getNumImages');
