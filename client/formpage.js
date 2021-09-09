@@ -5,8 +5,14 @@ if(imageIndex > imageCount){
     window.location.href = './endpage.html';
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    sessionStorage.setItem('valid', true)
+if(sessionStorage.getItem('finished') != null){
+    window.location.href = './index.html';
+}
+else{
+    sessionStorage.setItem('started', true);
+}
+
+document.addEventListener('DOMContentLoaded', () => {  
     let active = true;
     const wait=ms=>new Promise(resolve => setTimeout(resolve, ms));
     console.log("getting first images...");
