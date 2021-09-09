@@ -29,12 +29,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const customID = document.getElementById("customID"); //custom user ID input element
     const btn = document.getElementById("Begin");         //Button that starts the form
     btn.onclick = function(){
-        if(customID.value === '' || customID.value == null || customID.value.length != 6){
+        if(customID.value === '' || customID.value == null) {
             console.log("normal ID");
+            window.location.href = "./formpage.html";
+        }
+        else if (customID.value.length != 6){
+            window.alert("Invalid custom ID, leave prompt box blank for random ID")
         }
         else{
             sessionStorage.setItem('token', customID.value);
+            window.location.href = "./formpage.html";
         }
-        window.location.href = "./formpage.html";
     }
 });
