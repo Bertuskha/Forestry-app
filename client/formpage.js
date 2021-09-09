@@ -6,7 +6,7 @@ if(imageIndex > imageCount){
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    sessionStorage.setItem('valid', false)
+    sessionStorage.setItem('valid', true)
     let active = true;
     const wait=ms=>new Promise(resolve => setTimeout(resolve, ms));
     console.log("getting first images...");

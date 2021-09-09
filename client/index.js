@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById("token").innerHTML = "User ID: " + userID;
     } 
 
-    if(sessionStorage.getItem('valid') == "true"){
+    if(sessionStorage.getItem('valid') == null){
         sessionStorage.setItem('index', 1);
     }
     getToken();
@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
         else{
             sessionStorage.setItem('token', customID.value);
         }
-        sessionStorage.setItem('valid', true);
         window.location.href = "./formpage.html";
     }
 });
