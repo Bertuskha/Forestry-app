@@ -1,6 +1,8 @@
+//Get user and form info from the session storage
 const userID = sessionStorage.getItem('token');
 const imageCount = sessionStorage.getItem('imageCount');
 let imageIndex = sessionStorage.getItem('index');
+
 if(imageIndex > imageCount){
     window.location.href = './endpage.html';
 }

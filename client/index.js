@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
+    sessionStorage.removeItem('finished');
     //Fetches random user ID token from server
     //Pre: true
     //Post: Random token is saved in session storage and shown on screen
@@ -29,13 +29,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const customID = document.getElementById("customID"); //custom user ID input element
     const btn = document.getElementById("Begin");         //Button that starts the form
     btn.onclick = function(){
+        //If the custom ID prompt box is left blank, the randomly generated ID is used
         if(customID.value === '' || customID.value == null) {
             console.log("normal ID");
             window.location.href = "./formpage.html";
         }
+        //If the custom ID provided by the user is invalid, a pop up alert will notify of the error
         else if (customID.value.length != 6){
             window.alert("Invalid custom ID, leave prompt box blank for random ID")
         }
+        //If everything is valid, the custom ID is used instead of the random one
         else{
             sessionStorage.setItem('token', customID.value);
             window.location.href = "./formpage.html";
